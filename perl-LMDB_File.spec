@@ -8,7 +8,7 @@ URL:            http://search.cpan.org/~sortiz/LMDB_File-0.12/
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SO/SORTIZ/LMDB_File-0.12.tar.gz
 
 # Right now LMDB needs a 64bits platform.
-ExclusiveArch:  x86_64 ppc64le aarch64 ppc64
+ExclusiveArch:  x86_64 aarch64
 
 BuildRequires:  coreutils
 BuildRequires:  findutils
