@@ -10,21 +10,43 @@ Source0:        http://search.cpan.org/CPAN/authors/id/S/SO/SORTIZ/LMDB_File-0.1
 # Right now LMDB needs a 64bits platform and tests fail on ppc64[le].
 ExclusiveArch:  x86_64 aarch64
 
-BuildRequires:  coreutils
-BuildRequires:  findutils
 BuildRequires:  libdb-devel
 BuildRequires:  lmdb-devel >= 0.9.17
 BuildRequires:  perl(:VERSION) >= 5.10.0
-BuildRequires:  perl-devel
 BuildRequires:  perl-generators
 BuildRequires:  perl-interpreter
-BuildRequires:  perl(ExtUtils::MakeMaker) >= 5.16
+
+BuildRequires:  perl(AutoLoader)
+BuildRequires:  perl(Carp)
+BuildRequires:  perl(Exporter)
+BuildRequires:  perl(Fcntl)
+BuildRequires:  perl(Scalar::Util)
+BuildRequires:  perl(warnings)
+BuildRequires:  perl(XSLoader)
+# Makefile:
+BuildRequires:  perl(Config)
+BuildRequires:  perl(ExtUtils::Constant)
+BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.76
+BuildRequires:  perl(File::Copy)
+BuildRequires:  perl(File::Spec)
+BuildRequires:  perl(strict)
 # Tests:
-BuildRequires:  perl(Test::Exception)
+BuildRequires:  perl(B)
+BuildRequires:  perl(Benchmark)
+BuildRequires:  perl(bytes)
 BuildRequires:  perl(Devel::Peek)
+BuildRequires:  perl(Encode)
+BuildRequires:  perl(File::Temp)
+BuildRequires:  perl(IO::File)
+BuildRequires:  perl(POSIX)
+BuildRequires:  perl(Test::Exception)
+BuildRequires:  perl(Test::More)
+BuildRequires:  perl(Time::HiRes)
+BuildRequires:  perl(utf8)
+
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
-Requires:       perl(Fcntl)
 Requires:       perl(XSLoader)
+Requires:       perl(Exporter)
 
 %{?perl_default_filter}
 
@@ -43,14 +65,12 @@ compatible with others DBMs.
 
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="$RPM_OPT_FLAGS"
+perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="$RPM_OPT_FLAGS" NO_PACKLIST=1
 make %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %make_install
-find $RPM_BUILD_ROOT -type f -name .packlist -delete
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 
