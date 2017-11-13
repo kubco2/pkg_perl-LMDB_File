@@ -15,7 +15,6 @@ BuildRequires:  lmdb-devel >= 0.9.17
 BuildRequires:  perl(:VERSION) >= 5.10.0
 BuildRequires:  perl-generators
 BuildRequires:  perl-interpreter
-
 BuildRequires:  perl(AutoLoader)
 BuildRequires:  perl(Carp)
 BuildRequires:  perl(Exporter)
@@ -44,10 +43,19 @@ BuildRequires:  perl(Test::More)
 BuildRequires:  perl(Time::HiRes)
 BuildRequires:  perl(utf8)
 
+Requires:       libc
+Requires:       lmdb-libs
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
-Requires:       perl(XSLoader)
+Requires:       perl(AutoLoader)
+Requires:       perl(Carp)
 Requires:       perl(Exporter)
-
+Requires:       perl(Fcntl)
+Requires:       perl(Scalar::Util)
+Requires:       perl(XSLoader)
+Requires:       perl(strict)
+Requires:       perl(warnings)
+Requires:       rtld(GNU_HASH)
+  
 %{?perl_default_filter}
 
 %description
