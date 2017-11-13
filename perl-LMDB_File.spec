@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Perl5 wrapper around the OpenLDAP's LMDB
 License:        GPL+ or Artistic
 Group:          Development/Libraries
-URL:            http://search.cpan.org/~sortiz/LMDB_File-0.12/
+URL:            http://search.cpan.org/~sortiz/LMDB_File/
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SO/SORTIZ/LMDB_File-0.12.tar.gz
 
 # Right now LMDB needs a 64bits platform and tests fail on ppc64[le].
