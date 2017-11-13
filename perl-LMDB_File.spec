@@ -43,7 +43,8 @@ BuildRequires:  perl(Test::More)
 BuildRequires:  perl(Time::HiRes)
 BuildRequires:  perl(utf8)
 
-Requires:       lmdb-libs
+Requires:       libc.so.6
+Requires:       liblmdb.so.0.0.0
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
 Requires:       perl(AutoLoader)
 Requires:       perl(Carp)
