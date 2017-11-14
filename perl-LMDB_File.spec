@@ -8,7 +8,7 @@ URL:            http://search.cpan.org/~sortiz/LMDB_File/
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SO/SORTIZ/LMDB_File-0.12.tar.gz
 
 # Right now LMDB needs a 64bits platform and tests fail on ppc64[le].
-ExclusiveArch:  x86_64 aarch64
+ExcludeArch:    armv7hl i686 ppc64 ppc64le s390x
 
 BuildRequires:  libdb-devel
 BuildRequires:  lmdb-devel >= 0.9.17
