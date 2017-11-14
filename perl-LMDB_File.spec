@@ -73,7 +73,7 @@ compatible with others DBMs.
 
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="$RPM_OPT_FLAGS" NO_PACKLIST=1
+perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="$RPM_OPT_FLAGS" NO_PACKLIST=1 NO_PERLLOCAL=1
 make %{?_smp_mflags}
 
 
@@ -89,7 +89,6 @@ make test
 %files
 %doc Changes README
 %license LICENSE
-%exclude %{perl_archlib}/perllocal.pod
 %{perl_vendorarch}/auto/*
 %{perl_vendorarch}/LMDB_File*
 %{_mandir}/man3/*
