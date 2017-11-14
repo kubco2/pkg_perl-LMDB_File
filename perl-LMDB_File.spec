@@ -2,7 +2,7 @@ Name:           perl-LMDB_File
 Version:        0.12
 Release:        1%{?dist}
 Summary:        Perl5 wrapper around the OpenLDAP's LMDB
-License:        GPL+ or Artistic
+License:        Artistic 2.0
 Group:          Development/Libraries
 URL:            http://search.cpan.org/~sortiz/LMDB_File/
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SO/SORTIZ/LMDB_File-0.12.tar.gz
